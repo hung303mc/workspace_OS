@@ -17,7 +17,8 @@ __2: Process and threads__
 * [ ] Thread case study: PThreads
 * [ ] Thread design consideration
 * [ ] Thread performance
-[ ] Midterm
+* [ ] Midterm
+
 __3: Scheduling__
 * [ ] Scheduling
 * [ ] Memory management
@@ -25,9 +26,10 @@ __3: Scheduling__
 * [ ] Synchronization
 * [ ] I/O mamagement
 * [ ] Virtualization
+
 __4: Distributed resource__
 * [ ] Remove Procedure
 * [ ] Distributed file system
 * [ ] Shared memory
 * [ ] Datacenter technology
-[ ] Finalterm
+* [ ] Finalterm
