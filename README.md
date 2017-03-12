@@ -11,5 +11,23 @@ This is workspace for Introduction to OS course on Udemy
 * [ ] Create makefile to automatic build project
 
 ### Course Progress
-TODO
-
+__2: Process and threads__
+* [x] Processes and process management
+* [ ] Thread and concurrency
+* [ ] Thread case study: PThreads
+* [ ] Thread design consideration
+* [ ] Thread performance
+[ ] Midterm
+__3: Scheduling__
+* [ ] Scheduling
+* [ ] Memory management
+* [ ] Inter-process
+* [ ] Synchronization
+* [ ] I/O mamagement
+* [ ] Virtualization
+__4: Distributed resource__
+* [ ] Remove Procedure
+* [ ] Distributed file system
+* [ ] Shared memory
+* [ ] Datacenter technology
+[ ] Finalterm
