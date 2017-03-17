@@ -13,7 +13,7 @@ This is workspace for Introduction to OS course on Udemy
 ### Course Progress
 __2: Process and threads__
 * [x] Processes and process management
-* [ ] Thread and concurrency
+* [x] Thread and concurrency
 * [ ] Thread case study: PThreads
 * [ ] Thread design consideration
 * [ ] Thread performance
