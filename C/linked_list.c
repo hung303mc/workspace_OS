@@ -21,6 +21,7 @@ struct test_struct* create_list(int val)
         printf("\n Node creation failed \n");
         return NULL;
     }
+    /* Asssign value to new node */
     ptr->val = val;
     ptr->next = NULL;
 
@@ -66,6 +67,21 @@ struct test_struct* add_to_list(int val, bool add_to_end)
     return ptr;
 }
 
+/* 1st */
+/* head -> element1 -> element2 -> ... -> curr 
+   ^                                           
+   ptr                                         */
+
+/* 2nd */
+/* head -> element1 -> element2 -> ... -> curr 
+   ^       ^                                    
+   tmp     ptr                                 */
+
+/* 3rd */
+/* head -> element1 -> element2 -> ... -> curr -> NULL
+           ^            ^                                    
+           tmp          ptr                                 */
+
 struct test_struct* search_in_list(int val, struct test_struct **prev)
 {
     struct test_struct *ptr = head;
@@ -90,6 +106,7 @@ struct test_struct* search_in_list(int val, struct test_struct **prev)
 
     if(true == found)
     {
+        /* address contain in prev != NULL_PTR */
         if(prev)
             *prev = tmp;
         return ptr;
@@ -107,7 +124,7 @@ int delete_from_list(int val)
 
     printf("\n Deleting value [%d] from list\n",val);
 
-    del = search_in_list(val,&prev);
+    del = search_in_list(val, &prev);
     if(del == NULL)
     {
         return -1;
