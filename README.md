@@ -14,7 +14,7 @@ This is workspace for Introduction to OS [course](https://www.udacity.com/course
 __2: Process and threads__ (Deadline:26 Mar 2017)
 * [x] Processes and process management
 * [x] Thread and concurrency
-* [ ] Thread case study: PThreads [1h30]
+* [x] Thread case study: PThreads [1h30]
 * [ ] Problem Set [1h]
 * [ ] Thread design consideration [3h]
 * [ ] Thread performance [2.5h]
