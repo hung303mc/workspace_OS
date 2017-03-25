@@ -15,7 +15,11 @@ __2: Process and threads__ (Deadline:26 Mar 2017)
 * [x] Processes and process management
 * [x] Thread and concurrency
 * [x] Thread case study: PThreads [1h30]
-* [ ] Problem Set [1h]
+* [ ] Problem Set [4h]
+  * [ ] Reader Writer
+  * [ ] Simple socket: server
+  * [ ] Simple socket: client
+  * [ ] Echo protocol
 * [ ] Thread design consideration [3h]
 * [ ] Thread performance [2.5h]
 * [ ] Midterm [1.5h]
