@@ -1,0 +1,52 @@
+/*Question
+- how to delay in c language: delay(ms) in stdlib.h,
+- How to generate rand num in c language: rand():0..32768 or more
+- broadcast or signal
+- does need to signal from a reader to other reader when it finish
+- does need to signal from a writer to other writer when it finish
+- Where to increase number of reader: 
+  - top of reader func 
+  - or when reading shared variable: ok
+  */
+
+/* Variable */
+int sharedVar = 0;
+int numReader = 0;
+
+void main(){
+  create(tid1,reader);
+  create(tid2,writer);
+  for (int i = 0; i < count; ++i)
+  {
+    join(tid1);
+    join(tid2);
+  }
+}
+
+/*Reader function*/
+void reader(){
+  int var;
+  for (int i = 0; i < count; ++i)
+  {
+    delay(rands);
+    numReader++;
+    var = read(sharedVar);
+    numReader--;
+    (numReader == 0)?broadcast():;
+    printf("read value %d \n",var);
+    printf("number of reader is %d \n",numReader);
+  }
+}
+
+/*Writer func*/
+void writer(){
+  for (int i = 0; i < count; ++i)
+  {
+    delay(rands);
+    while(numReader != 0)? wait():write(sharedVar);
+    printf("write value %d \n",i);
+    printf("number of reader is %d \n",numReader); /*It should be = 0*/
+  }
+}
+
+

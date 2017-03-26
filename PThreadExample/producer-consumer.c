@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
+#include <unistd.h>
 
 #define BUF_SIZE 3		/* Size of shared buffer */
 
@@ -16,9 +17,10 @@ pthread_cond_t c_prod = PTHREAD_COND_INITIALIZER; /* producer waits on this cond
 void *producer (void *param);
 void *consumer (void *param);
 
+pthread_t tid1, tid2;  /* thread identifiers */
+
 int main(int argc, char *argv[]) {
 
-	pthread_t tid1, tid2;  /* thread identifiers */
 	int i;
 
 	/* create the threads; may be any number, in general */
@@ -34,9 +36,9 @@ int main(int argc, char *argv[]) {
 
 	/* wait for created thread to exit */
 	pthread_join(tid1, NULL);
-	pthread_join(tid2, NULL);
-	printf("Parent quiting\n");
+	pthread_join(tid2, NULL);			
 
+	printf("Parent quiting\n");
 	return 0;
 }
 
@@ -64,11 +66,11 @@ void *producer(void *param) {
 
 		pthread_cond_signal (&c_cons);
 		printf ("producer: inserted %d\n", i);
-		fflush (stdout);
+		//fflush(stdout);
 	}
 
 	printf("producer quiting\n");
-	fflush(stdout);
+	//fflush(stdout);
 	return 0;
 }
 
@@ -78,7 +80,7 @@ void *consumer(void *param) {
 	int i;
 
 	while(1) {
-
+		sleep(1);
 		pthread_mutex_lock (&m);
 			if (num < 0) {
 				exit(1);
@@ -95,8 +97,7 @@ void *consumer(void *param) {
 		pthread_mutex_unlock (&m);
 
 		pthread_cond_signal (&c_prod);
-		printf ("Consume value %d\n", i);  fflush(stdout);
-
+		printf ("Consume value %d\n", i);  //fflush(stdout);
 	}
 	return 0;
 }
