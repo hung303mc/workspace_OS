@@ -23,21 +23,6 @@ void main(){
   }
 }
 
-/*Reader function*/
-void reader(){
-  int var;
-  for (int i = 0; i < count; ++i)
-  {
-    delay(rands);
-    numReader++;
-    var = read(sharedVar);
-    numReader--;
-    (numReader == 0)?broadcast():;
-    printf("read value %d \n",var);
-    printf("number of reader is %d \n",numReader);
-  }
-}
-
 /*Writer func*/
 void writer(){
   for (int i = 0; i < count; ++i)
@@ -48,5 +33,21 @@ void writer(){
     printf("number of reader is %d \n",numReader); /*It should be = 0*/
   }
 }
+
+/*Reader function*/
+void reader(){
+  int readVal;
+  for (int i = 0; i < count; ++i)
+  {
+    delay(rands);
+    numReader++;
+    readVal = read(sharedVar);
+    numReader--;
+    (numReader == 0)?broadcast():;
+    printf("read value %d \n",readVal);
+    printf("number of reader is %d \n",numReader);
+  }
+}
+
 
 
