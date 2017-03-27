@@ -16,7 +16,7 @@ __2: Process and threads__ (Deadline:26 Mar 2017)
 * [x] Thread and concurrency
 * [x] Thread case study: PThreads [1h30]
 * [ ] Problem Set [4h]
-  * [ ] Reader Writer
+  * [x] Reader Writer
   * [ ] Simple socket: server
   * [ ] Simple socket: client
   * [ ] Echo protocol
