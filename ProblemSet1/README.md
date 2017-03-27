@@ -1,18 +1,19 @@
 # Priority Readers and Writers #
 Write a multi-threaded C program that gives readers priority over writers concerning a shared (global) variable. Essentially, if any readers are waiting, then they have priority over writer threads -- writers can only write when there are no readers. This program should adhere to the following constraints:
 
-* [ ] Multiple readers/writers must be supported (5 of each is fine)
-* [ ] Readers must read the shared variable X number of times
-* [ ] Writers must write the shared variable X number of times
-* [ ] Readers must print:
-  * [ ] The value read
-  * [ ] The number of readers present when value is read
-* [ ] Writers must print:
-  * [ ] The written value
-  * [ ] The number of readers present were when value is written (should be 0)
-* [ ] Before a reader/writer attempts to access the shared variable it should wait some random amount of time
-  * [ ] Note: This will help ensure that reads and writes do not occur all at once
-* [ ] Use pthreads, mutexes, and condition variables to synchronize access to the shared variable
+* [x] Multiple readers/writers must be supported (5 of each is fine)
+* [x] Readers must read the shared variable X number of times
+* [x] Writers must write the shared variable X number of times
+* [x] Readers must print:
+  * [x] The value read
+  * [x] The number of readers present when value is read
+* [x] Writers must print:
+  * [x] The written value
+  * [x] The number of readers present were when value is written (should be 0)
+* [x] Before a reader/writer attempts to access the shared variable it should wait some random amount of time
+  * Note: This will help ensure that reads and writes do not occur all at once
+* [x] Use pthreads, mutexes, and condition variables to synchronize access to the shared variable
+
 # Simple Socket: Client #
 Write a simple C program that creates, initializes, and connects a client socket to a server socket. You should provide a way to specify the connecting server address and port. This can be hardcoded or passed via the command line.
 
