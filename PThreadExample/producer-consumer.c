@@ -47,7 +47,7 @@ void *producer(void *param) {
 
 	int i;
 	for (i=1; i<=20; i++) {
-		
+		usleep((rand()%50)*1000*20);		
 		/* Insert into buffer */
 		pthread_mutex_lock (&m);	
 			if (num > BUF_SIZE) {
@@ -55,6 +55,7 @@ void *producer(void *param) {
 			}
 
 			while (num == BUF_SIZE) {  /* block if buffer is full */
+				printf("wait producer thread, buffer full !!!\n");
 				pthread_cond_wait (&c_prod, &m);
 			}
 			
@@ -80,13 +81,14 @@ void *consumer(void *param) {
 	int i;
 
 	while(1) {
-		sleep(1);
+		usleep((rand()%50)*1000*20);
 		pthread_mutex_lock (&m);
 			if (num < 0) {
 				exit(1);
 			} /* underflow */
 
 			while (num == 0) {  /* block if buffer empty */
+				printf("wait producer thread, buffer empty !!!\n");				
 				pthread_cond_wait (&c_cons, &m);
 			}
 
